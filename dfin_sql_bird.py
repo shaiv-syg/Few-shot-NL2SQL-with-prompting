@@ -29,7 +29,6 @@ CHAT = get_langchain_llm_4()
 
 
 # PERSONAL
-# os.environ["OPENAI_API_KEY"] = "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"
 # CHAT = ChatOpenAI(model="gpt-4-32k",temperature=0,max_tokens=2000)
 dev_db_path = "dev/dev_databases"
 dev_df = pd.read_json("dev/dev.json")

@@ -1,4 +1,6 @@
 /dev/*
-/dev
 .idea*
 __pycache__*
+.DS_Store
+
+!/dev/dev.json
