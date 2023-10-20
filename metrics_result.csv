@@ -1,0 +1,101 @@
+question_id,db_id,tables_dev,tables_csv,gen_tables,total_tables,tp,tn,fp,fn,precision,recall,f1_score
+1,california_schools,['frpm'],['frpm'],"['frpm', 'Grapes', 'Lemon']",12,1,0,2,0,0.3333333333333333,1.0,0.5
+2,california_schools,"['frpm', 'schools']","['Orange', 'Mango', 'Strawberry']","['Apple', 'Blueberry', 'Pineapple']",17,0,0,3,2,0.0,0.0,0.0
+3,california_schools,"['frpm', 'schools']","['Grapes', 'Kiwi', 'Peach']","['Lemon', 'Banana', 'Cherry']",25,0,0,3,2,0.0,0.0,0.0
+4,california_schools,"['frpm', 'schools']","['Blueberry', 'Pear', 'Watermelon']","['Mango', 'Strawberry', 'Apple']",8,0,0,3,2,0.0,0.0,0.0
+5,california_schools,"['satscores', 'schools']","['Pineapple', 'Lime', 'Raspberry']","['Kiwi', 'Grapes', 'Peach']",36,0,0,3,2,0.0,0.0,0.0
+6,california_schools,"['satscores', 'schools']","['Cherry', 'Grapes', 'Banana']","['Strawberry', 'Lemon', 'Apple']",14,0,0,3,2,0.0,0.0,0.0
+7,california_schools,"['satscores', 'schools']","['Banana', 'Apple', 'Lemon']","['Cherry', 'Orange', 'Peach']",29,0,0,3,2,0.0,0.0,0.0
+8,california_schools,"['frpm', 'satscores']","['Mango', 'Strawberry', 'Apple']","['Pineapple', 'Blueberry', 'Kiwi']",20,0,0,3,2,0.0,0.0,0.0
+9,california_schools,"['frpm', 'satscores']","['Kiwi', 'Peach', 'Grapes']","['Banana', 'Cherry', 'Watermelon']",33,0,0,3,2,0.0,0.0,0.0
+10,california_schools,"['frpm', 'satscores']","['Pear', 'Blueberry', 'Pineapple']","['Lime', 'Raspberry', 'Mango']",12,0,0,3,2,0.0,0.0,0.0
+11,california_schools,"['frpm', 'schools']","['Lemon', 'Apple', 'Grapes']","['Strawberry', 'Cherry', 'Banana']",22,0,0,3,2,0.0,0.0,0.0
+12,california_schools,"['frpm', 'satscores']","['Cherry', 'Peach', 'Raspberry']","['Kiwi', 'Watermelon', 'Lime']",30,0,0,3,2,0.0,0.0,0.0
+13,california_schools,"['satscores', 'schools']","['Grapes', 'Mango', 'Watermelon']","['Apple', 'Strawberry', 'Pineapple']",28,0,0,3,2,0.0,0.0,0.0
+14,california_schools,"['frpm', 'schools']","['Watermelon', 'Pineapple', 'Kiwi']","['Raspberry', 'Lemon', 'Banana']",7,0,0,3,2,0.0,0.0,0.0
+15,california_schools,"['satscores', 'schools']","['Banana', 'Strawberry', 'Cherry']","['Peach', 'Mango', 'Apple']",23,0,0,3,2,0.0,0.0,0.0
+16,california_schools,"['satscores', 'schools']","['Lemon', 'Grapes', 'Pear']","['Blueberry', 'Kiwi', 'Pineapple']",13,0,0,3,2,0.0,0.0,0.0
+17,california_schools,"['satscores', 'schools']","['Cherry', 'Orange', 'Kiwi']","['Watermelon', 'Banana', 'Apple']",15,0,0,3,2,0.0,0.0,0.0
+18,california_schools,"['frpm', 'satscores']","['Apple', 'Peach', 'Grapes']","['Strawberry', 'Lemon', 'Mango']",19,0,0,3,2,0.0,0.0,0.0
+19,california_schools,"['satscores', 'schools']","['Pineapple', 'Banana', 'Mango']","['Raspberry', 'Cherry', 'Kiwi']",9,0,0,3,2,0.0,0.0,0.0
+20,california_schools,"['frpm', 'schools']","['Pear', 'Kiwi', 'Grapes']","['Watermelon', 'Blueberry', 'Lime']",10,0,0,3,2,0.0,0.0,0.0
+21,california_schools,['frpm'],"['Mango', 'Cherry', 'Apple']","['Pineapple', 'Lemon', 'Banana']",37,0,0,3,1,0.0,0.0,0.0
+22,california_schools,['satscores'],"['Lime', 'Peach', 'Grapes']","['Kiwi', 'Strawberry', 'Orange']",4,0,0,3,1,0.0,0.0,0.0
+23,california_schools,"['frpm', 'schools']","['Raspberry', 'Watermelon', 'Blueberry']","['Mango', 'Pineapple', 'Cherry']",11,0,0,3,2,0.0,0.0,0.0
+24,california_schools,"['frpm', 'satscores']","['Cherry', 'Banana', 'Lemon']","['Apple', 'Peach', 'Grapes']",35,0,0,3,2,0.0,0.0,0.0
+25,california_schools,"['frpm', 'satscores']","['Strawberry', 'Raspberry', 'Mango']","['Kiwi', 'Pineapple', 'Blueberry']",21,0,0,3,2,0.0,0.0,0.0
+26,california_schools,"['frpm', 'schools']","['Lemon', 'Cherry', 'Grapes']","['Banana', 'Watermelon', 'Peach']",6,0,0,3,2,0.0,0.0,0.0
+27,california_schools,"['satscores', 'schools']","['Apple', 'Kiwi', 'Pineapple']","['Orange', 'Strawberry', 'Mango']",26,0,0,3,2,0.0,0.0,0.0
+28,california_schools,"['frpm', 'schools']","['Peach', 'Grapes', 'Banana']","['Cherry', 'Raspberry', 'Lime']",16,0,0,3,2,0.0,0.0,0.0
+29,california_schools,"['frpm', 'schools']","['Watermelon', 'Lemon', 'Apple']","['Blueberry', 'Kiwi', 'Strawberry']",38,0,0,3,2,0.0,0.0,0.0
+30,california_schools,"['frpm', 'schools']","['Cherry', 'Banana', 'Mango']","['Pineapple', 'Grapes', 'Raspberry']",31,0,0,3,2,0.0,0.0,0.0
+31,california_schools,['frpm'],"['Lime', 'Kiwi', 'Peach']","['Lemon', 'Strawberry', 'Apple']",27,0,0,3,1,0.0,0.0,0.0
+32,california_schools,"['frpm', 'schools']","['Banana', 'Grapes', 'Cherry']","['Watermelon', 'Mango', 'Pineapple']",5,0,0,3,2,0.0,0.0,0.0
+33,california_schools,"['frpm', 'schools']","['Blueberry', 'Pear', 'Kiwi']","['Peach', 'Strawberry', 'Raspberry']",18,0,0,3,2,0.0,0.0,0.0
+34,california_schools,"['frpm', 'schools']","['Mango', 'Apple', 'Grapes']","['Banana', 'Pineapple', 'Cherry']",34,0,0,3,2,0.0,0.0,0.0
+35,california_schools,"['frpm', 'schools']","['Pineapple', 'Raspberry', 'Cherry']","['Lime', 'Grapes', 'Strawberry']",24,0,0,3,2,0.0,0.0,0.0
+36,california_schools,"['satscores', 'schools']","['Apple', 'Banana', 'Kiwi']","['Peach', 'Lemon', 'Mango']",39,0,0,3,2,0.0,0.0,0.0
+37,california_schools,"['satscores', 'schools']","['Cherry', 'Grapes', 'Strawberry']","['Raspberry', 'Kiwi', 'Pineapple']",32,0,0,3,2,0.0,0.0,0.0
+38,california_schools,"['satscores', 'schools']","['Pear', 'Orange', 'Banana']","['Lemon', 'Blueberry', 'Mango']",3,0,0,3,2,0.0,0.0,0.0
+39,california_schools,"['satscores', 'schools']","['Kiwi', 'Grapes', 'Peach']","['Cherry', 'Lime', 'Strawberry']",25,0,0,3,2,0.0,0.0,0.0
+40,california_schools,"['satscores', 'schools']","['Apple', 'Pineapple', 'Lemon']","['Raspberry', 'Banana', 'Mango']",9,0,0,3,2,0.0,0.0,0.0
+41,california_schools,"['satscores', 'schools']","['Blueberry', 'Grapes', 'Watermelon']","['Strawberry', 'Kiwi', 'Cherry']",10,0,0,3,2,0.0,0.0,0.0
+42,california_schools,"['satscores', 'schools']","['Pineapple', 'Cherry', 'Mango']","['Banana', 'Lemon', 'Apple']",18,0,0,3,2,0.0,0.0,0.0
+43,california_schools,"['satscores', 'schools']","['Lime', 'Peach', 'Raspberry']","['Grapes', 'Strawberry', 'Kiwi']",17,0,0,3,2,0.0,0.0,0.0
+44,california_schools,"['satscores', 'schools']","['Banana', 'Cherry', 'Kiwi']","['Pineapple', 'Grapes', 'Orange']",27,0,0,3,2,0.0,0.0,0.0
+45,california_schools,"['satscores', 'schools']","['Lemon', 'Mango', 'Grapes']","['Apple', 'Blueberry', 'Peach']",19,0,0,3,2,0.0,0.0,0.0
+46,california_schools,"['frpm', 'schools']","['Cherry', 'Pear', 'Watermelon']","['Kiwi', 'Pineapple', 'Strawberry']",38,0,0,3,2,0.0,0.0,0.0
+47,california_schools,['schools'],"['Grapes', 'Blueberry', 'Banana']","['Lemon', 'Raspberry', 'Mango']",16,0,0,3,1,0.0,0.0,0.0
+48,california_schools,['schools'],"['Pineapple', 'Kiwi', 'Apple']","['Cherry', 'Banana', 'Lime']",36,0,0,3,1,0.0,0.0,0.0
+49,california_schools,['schools'],"['Strawberry', 'Peach', 'Mango']","['Raspberry', 'Grapes', 'Lemon']",29,0,0,3,1,0.0,0.0,0.0
+50,california_schools,"['satscores', 'schools']","['Cherry', 'Banana', 'Pineapple']","['Blueberry', 'Kiwi', 'Apple']",28,0,0,3,2,0.0,0.0,0.0
+51,california_schools,"['satscores', 'schools']","['Apple', 'Grapes', 'Peach']","['Lemon', 'Raspberry', 'Mango']",34,0,0,3,2,0.0,0.0,0.0
+52,california_schools,"['satscores', 'schools']","['Banana', 'Strawberry', 'Cherry']","['Kiwi', 'Pineapple', 'Lime']",8,0,0,3,2,0.0,0.0,0.0
+53,california_schools,"['satscores', 'schools']","['Mango', 'Peach', 'Lemon']","['Grapes', 'Blueberry', 'Cherry']",6,0,0,3,2,0.0,0.0,0.0
+54,california_schools,['schools'],"['Watermelon', 'Lime', 'Pear']","['Kiwi', 'Raspberry', 'Apple']",26,0,0,3,1,0.0,0.0,0.0
+55,california_schools,['schools'],"['Banana', 'Cherry', 'Pineapple']","['Lemon', 'Grapes', 'Mango']",23,0,0,3,1,0.0,0.0,0.0
+56,california_schools,['schools'],"['Raspberry', 'Kiwi', 'Grapes']","['Strawberry', 'Apple', 'Blueberry']",11,0,0,3,1,0.0,0.0,0.0
+57,california_schools,"['satscores', 'schools']","['Cherry', 'Blueberry', 'Peach']","['Banana', 'Pineapple', 'Lemon']",13,0,0,3,2,0.0,0.0,0.0
+58,california_schools,['schools'],"['Apple', 'Orange', 'Lime']","['Mango', 'Strawberry', 'Watermelon']",15,0,0,3,1,0.0,0.0,0.0
+59,california_schools,['schools'],"['Grapes', 'Pineapple', 'Cherry']","['Kiwi', 'Banana', 'Peach']",37,0,0,3,1,0.0,0.0,0.0
+60,california_schools,['schools'],"['Banana', 'Grapes', 'Peach']","['Cherry', 'Lemon', 'Raspberry']",33,0,0,3,1,0.0,0.0,0.0
+61,california_schools,['schools'],"['Strawberry', 'Mango', 'Blueberry']","['Kiwi', 'Pineapple', 'Apple']",24,0,0,3,1,0.0,0.0,0.0
+62,california_schools,"['frpm', 'schools']","['Lime', 'Cherry', 'Pear']","['Banana', 'Grapes', 'Lemon']",14,0,0,3,2,0.0,0.0,0.0
+63,california_schools,['schools'],"['Pineapple', 'Kiwi', 'Raspberry']","['Orange', 'Apple', 'Cherry']",9,0,0,3,1,0.0,0.0,0.0
+64,california_schools,['schools'],"['Cherry', 'Banana', 'Lemon']","['Blueberry', 'Peach', 'Grapes']",30,0,0,3,1,0.0,0.0,0.0
+65,california_schools,['schools'],"['Pear', 'Apple', 'Peach']","['Lime', 'Banana', 'Raspberry']",31,0,0,3,1,0.0,0.0,0.0
+66,california_schools,['schools'],"['Mango', 'Cherry', 'Grapes']","['Kiwi', 'Pineapple', 'Strawberry']",35,0,0,3,1,0.0,0.0,0.0
+67,california_schools,['schools'],"['Blueberry', 'Raspberry', 'Kiwi']","['Cherry', 'Lemon', 'Banana']",22,0,0,3,1,0.0,0.0,0.0
+68,california_schools,['schools'],"['Watermelon', 'Pineapple', 'Mango']","['Lime', 'Grapes', 'Apple']",20,0,0,3,1,0.0,0.0,0.0
+69,california_schools,['schools'],"['Banana', 'Strawberry', 'Apple']","['Raspberry', 'Peach', 'Cherry']",37,0,0,3,1,0.0,0.0,0.0
+70,california_schools,['schools'],"['Grapes', 'Cherry', 'Kiwi']","['Lemon', 'Pineapple', 'Mango']",8,0,0,3,1,0.0,0.0,0.0
+71,california_schools,"['frpm', 'schools']","['Peach', 'Banana', 'Lemon']","['Kiwi', 'Grapes', 'Strawberry']",34,0,0,3,2,0.0,0.0,0.0
+72,california_schools,"['frpm', 'schools']","['Cherry', 'Raspberry', 'Blueberry']","['Apple', 'Mango', 'Pineapple']",12,0,0,3,2,0.0,0.0,0.0
+73,california_schools,"['frpm', 'schools']","['Kiwi', 'Lime', 'Grapes']","['Peach', 'Banana', 'Strawberry']",32,0,0,3,2,0.0,0.0,0.0
+74,california_schools,"['frpm', 'schools']","['Banana', 'Mango', 'Cherry']","['Pineapple', 'Raspberry', 'Apple']",10,0,0,3,2,0.0,0.0,0.0
+75,california_schools,"['frpm', 'schools']","['Pear', 'Apple', 'Pineapple']","['Lemon', 'Grapes', 'Kiwi']",16,0,0,3,2,0.0,0.0,0.0
+76,california_schools,"['frpm', 'schools']","['Mango', 'Strawberry', 'Grapes']","['Watermelon', 'Peach', 'Cherry']",21,0,0,3,2,0.0,0.0,0.0
+77,california_schools,"['frpm', 'schools']","['Cherry', 'Lemon', 'Raspberry']","['Kiwi', 'Banana', 'Blueberry']",24,0,0,3,2,0.0,0.0,0.0
+78,california_schools,['schools'],"['Lime', 'Kiwi', 'Grapes']","['Pineapple', 'Strawberry', 'Orange']",19,0,0,3,1,0.0,0.0,0.0
+79,california_schools,['schools'],"['Banana', 'Grapes', 'Peach']","['Lemon', 'Raspberry', 'Cherry']",35,0,0,3,1,0.0,0.0,0.0
+80,california_schools,"['frpm', 'schools']","['Blueberry', 'Pear', 'Kiwi']","['Peach', 'Strawberry', 'Raspberry']",26,0,0,3,2,0.0,0.0,0.0
+81,california_schools,"['frpm', 'schools']","['Mango', 'Apple', 'Grapes']","['Banana', 'Pineapple', 'Cherry']",3,0,0,3,2,0.0,0.0,0.0
+82,california_schools,['schools'],"['Pineapple', 'Raspberry', 'Cherry']","['Lime', 'Grapes', 'Strawberry']",13,0,0,3,1,0.0,0.0,0.0
+83,california_schools,"['frpm', 'schools']","['Apple', 'Banana', 'Kiwi']","['Peach', 'Lemon', 'Mango']",30,0,0,3,2,0.0,0.0,0.0
+84,california_schools,['schools'],"['Cherry', 'Grapes', 'Strawberry']","['Raspberry', 'Kiwi', 'Pineapple']",33,0,0,3,1,0.0,0.0,0.0
+85,california_schools,"['frpm', 'schools']","['Pear', 'Orange', 'Banana']","['Lemon', 'Blueberry', 'Mango']",9,0,0,3,2,0.0,0.0,0.0
+86,california_schools,['schools'],"['Kiwi', 'Grapes', 'Peach']","['Cherry', 'Lime', 'Strawberry']",14,0,0,3,1,0.0,0.0,0.0
+87,california_schools,"['frpm', 'schools']","['Mango', 'Pineapple', 'Lemon']","['Raspberry', 'Banana', 'Kiwi']",18,0,0,3,2,0.0,0.0,0.0
+88,california_schools,"['satscores', 'schools']","['Banana', 'Cherry', 'Kiwi']","['Pineapple', 'Grapes', 'Orange']",27,0,0,3,2,0.0,0.0,0.0
+89,financial,"['account', 'district']","['Lemon', 'Mango', 'Grapes']","['Apple', 'Blueberry', 'Peach']",20,0,0,3,2,0.0,0.0,0.0
+90,financial,"['account', 'district', 'loan']","['Cherry', 'Pear', 'Watermelon']","['Kiwi', 'Pineapple', 'Strawberry']",38,0,0,3,3,0.0,0.0,0.0
+91,financial,['district'],"['Grapes', 'Blueberry', 'Banana']","['Lemon', 'Raspberry', 'Mango']",7,0,0,3,1,0.0,0.0,0.0
+92,financial,"['client', 'district']","['Pineapple', 'Kiwi', 'Apple']","['Cherry', 'Banana', 'Lime']",37,0,0,3,2,0.0,0.0,0.0
+93,financial,"['client', 'district']","['Strawberry', 'Peach', 'Mango']","['Raspberry', 'Grapes', 'Lemon']",15,0,0,3,2,0.0,0.0,0.0
+94,financial,"['account', 'client', 'district']","['Cherry', 'Banana', 'Pineapple']","['Blueberry', 'Kiwi', 'Apple']",4,0,0,3,3,0.0,0.0,0.0
+95,financial,"['account', 'client', 'district']","['Apple', 'Grapes', 'Peach']","['Lemon', 'Raspberry', 'Mango']",25,0,0,3,3,0.0,0.0,0.0
+96,financial,"['account', 'disp']","['Banana', 'Strawberry', 'Cherry']","['Kiwi', 'Pineapple', 'Lime']",11,0,0,3,2,0.0,0.0,0.0
+97,financial,"['account', 'disp']","['Mango', 'Peach', 'Lemon']","['Grapes', 'Blueberry', 'Cherry']",5,0,0,3,2,0.0,0.0,0.0
+98,financial,"['account', 'loan']","['Watermelon', 'Lime', 'Pear']","['Kiwi', 'Raspberry', 'Apple']",28,0,0,3,2,0.0,0.0,0.0
+99,financial,"['disp', 'loan']","['Banana', 'Cherry', 'Pineapple']","['Lemon', 'Grapes', 'Mango']",12,0,0,3,2,0.0,0.0,0.0
+100,financial,"['client', 'district']","['Raspberry', 'Kiwi', 'Grapes']","['Strawberry', 'Apple', 'Blueberry']",22,0,0,3,2,0.0,0.0,0.0
