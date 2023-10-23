@@ -1,0 +1,111 @@
+question_id,missed_tables_count,extra_tables_count,missed_tables,extra_tables,recall,tables_filtered_percentage
+0,0,1,set(),{'schools'},1.0,33.33333333333333
+1,0,2,set(),"{'satscores', 'schools'}",1.0,0.0
+2,0,1,set(),{'satscores'},1.0,0.0
+3,0,1,set(),{'satscores'},1.0,0.0
+4,0,0,set(),set(),1.0,33.33333333333333
+5,0,0,set(),set(),1.0,33.33333333333333
+6,0,1,set(),{'frpm'},1.0,0.0
+7,0,1,set(),{'frpm'},1.0,0.0
+8,0,1,set(),{'schools'},1.0,0.0
+9,0,1,set(),{'schools'},1.0,0.0
+89,0,3,set(),"{'disp', 'card', 'trans'}",1.0,37.5
+90,0,0,set(),set(),1.0,62.5
+91,0,0,set(),set(),1.0,87.5
+92,0,0,set(),set(),1.0,75.0
+93,0,2,set(),"{'disp', 'account'}",1.0,50.0
+94,0,1,set(),{'disp'},1.0,50.0
+95,0,1,set(),{'disp'},1.0,50.0
+96,0,1,set(),{'client'},1.0,62.5
+97,0,3,set(),"{'client', 'order', 'trans'}",1.0,37.5
+98,0,0,set(),set(),1.0,75.0
+195,0,1,set(),{'connected'},1.0,50.0
+196,0,2,set(),"{'bond', 'connected'}",1.0,0.0
+197,0,2,set(),"{'molecule', 'connected'}",1.0,0.0
+198,0,1,set(),{'connected'},1.0,0.0
+199,0,2,set(),"{'bond', 'connected'}",1.0,0.0
+200,0,2,set(),"{'atom', 'connected'}",1.0,0.0
+201,0,2,set(),"{'molecule', 'connected'}",1.0,0.0
+202,0,3,set(),"{'molecule', 'atom', 'connected'}",1.0,0.0
+203,0,3,set(),"{'molecule', 'bond', 'connected'}",1.0,0.0
+204,0,3,set(),"{'bond', 'atom', 'connected'}",1.0,0.0
+340,0,1,set(),{'sets'},1.0,66.66666666666666
+341,0,4,set(),"{'foreign_data', 'legalities', 'sets', 'ruling'}",1.0,16.666666666666664
+342,0,4,set(),"{'foreign_data', 'legalities', 'sets', 'ruling'}",1.0,16.666666666666664
+343,0,3,set(),"{'foreign_data', 'legalities', 'sets'}",1.0,33.33333333333333
+344,0,0,set(),set(),1.0,66.66666666666666
+345,0,0,set(),set(),1.0,66.66666666666666
+346,0,0,set(),set(),1.0,66.66666666666666
+347,1,4,{'rulings'},"{'foreign_data', 'legalities', 'sets', 'ruling'}",0.5,16.666666666666664
+348,1,4,{'rulings'},"{'foreign_data', 'legalities', 'sets', 'ruling'}",0.5,16.666666666666664
+349,1,1,{'rulings'},{'ruling'},0.5,66.66666666666666
+531,0,0,set(),set(),1.0,87.5
+532,0,2,set(),"{'posts', 'posthistory'}",1.0,62.5
+533,0,7,set(),"{'votes', 'posthistory', 'posts', 'comments', 'tags', 'badges', 'postlinks'}",1.0,0.0
+534,0,7,set(),"{'votes', 'posthistory', 'posts', 'comments', 'tags', 'badges', 'postlinks'}",1.0,0.0
+535,0,1,set(),{'votes'},1.0,75.0
+536,0,2,set(),"{'posts', 'posthistory'}",1.0,62.5
+537,0,1,set(),{'posthistory'},1.0,62.5
+538,0,6,set(),"{'votes', 'posthistory', 'comments', 'tags', 'badges', 'postlinks'}",1.0,0.0
+539,0,6,set(),"{'votes', 'posthistory', 'comments', 'tags', 'badges', 'postlinks'}",1.0,0.0
+540,0,2,set(),"{'comments', 'votes'}",1.0,50.0
+717,0,0,set(),set(),1.0,70.0
+718,0,1,set(),{'superhero'},1.0,70.0
+719,0,0,set(),set(),1.0,70.0
+720,0,1,set(),{'superpower'},1.0,70.0
+721,0,0,set(),set(),1.0,80.0
+722,0,0,set(),set(),1.0,80.0
+723,0,0,set(),set(),1.0,60.0
+724,0,0,set(),set(),1.0,80.0
+725,0,0,set(),set(),1.0,80.0
+726,0,0,set(),set(),1.0,80.0
+846,0,1,set(),{'races'},1.0,76.92307692307693
+847,1,2,{'qualifying'},"{'races', 'laptimes'}",0.5,76.92307692307693
+848,0,0,set(),set(),1.0,84.61538461538461
+849,0,0,set(),set(),1.0,84.61538461538461
+850,0,0,set(),set(),1.0,84.61538461538461
+851,0,3,set(),"{'races', 'circuits', 'constructorresults'}",1.0,61.53846153846154
+852,0,0,set(),set(),1.0,84.61538461538461
+853,0,0,set(),set(),1.0,84.61538461538461
+854,0,0,set(),set(),1.0,84.61538461538461
+855,0,7,set(),"{'constructorstandings', 'qualifying', 'constructorresults', 'pitstops', 'laptimes', 'results', 'driverstandings'}",1.0,30.76923076923077
+1020,0,1,set(),{'player'},1.0,71.42857142857143
+1021,0,0,set(),set(),1.0,85.71428571428571
+1022,0,1,set(),{'player'},1.0,71.42857142857143
+1023,0,2,set(),"{'match', 'player'}",1.0,57.14285714285714
+1024,0,1,set(),{'player'},1.0,71.42857142857143
+1025,0,0,set(),set(),1.0,71.42857142857143
+1026,0,0,set(),set(),1.0,71.42857142857143
+1027,0,0,set(),set(),1.0,71.42857142857143
+1028,0,4,set(),"{'team_attributes', 'country', 'player_attributes', 'player'}",1.0,0.0
+1029,0,0,set(),set(),1.0,71.42857142857143
+1149,0,2,set(),"{'examination', 'laboratory'}",1.0,0.0
+1150,0,2,set(),"{'examination', 'laboratory'}",1.0,0.0
+1151,0,2,set(),"{'examination', 'laboratory'}",1.0,0.0
+1152,0,2,set(),"{'examination', 'laboratory'}",1.0,0.0
+1153,0,1,set(),{'examination'},1.0,0.0
+1154,0,1,set(),{'laboratory'},1.0,0.0
+1155,0,1,set(),{'examination'},1.0,0.0
+1156,0,1,set(),{'laboratory'},1.0,0.0
+1157,0,1,set(),{'laboratory'},1.0,0.0
+1158,0,0,set(),set(),1.0,33.33333333333333
+1312,0,0,set(),set(),1.0,75.0
+1313,0,0,set(),set(),1.0,75.0
+1314,0,0,set(),set(),1.0,75.0
+1315,0,1,set(),{'member'},1.0,62.5
+1316,0,0,set(),set(),1.0,62.5
+1317,0,1,set(),{'major'},1.0,50.0
+1318,0,1,set(),{'member'},1.0,62.5
+1319,0,0,set(),set(),1.0,75.0
+1320,0,5,set(),"{'major', 'expense', 'zip_code', 'budget', 'income'}",1.0,0.0
+1321,0,0,set(),set(),1.0,62.5
+1470,0,2,set(),"{'transactions_1k', 'products'}",1.0,40.0
+1471,0,0,set(),set(),1.0,80.0
+1472,0,3,set(),"{'gasstations', 'transactions_1k', 'products'}",1.0,0.0
+1473,0,1,set(),{'transactions_1k'},1.0,40.0
+1474,0,3,set(),"{'gasstations', 'transactions_1k', 'products'}",1.0,0.0
+1475,0,1,set(),{'transactions_1k'},1.0,40.0
+1476,0,1,set(),{'transactions_1k'},1.0,40.0
+1477,0,3,set(),"{'gasstations', 'transactions_1k', 'products'}",1.0,0.0
+1478,0,2,set(),"{'gasstations', 'transactions_1k'}",1.0,20.0
+1479,0,1,set(),{'transactions_1k'},1.0,40.0

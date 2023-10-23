@@ -1,0 +1,111 @@
+question_id,db_id,gold_tables,predicted_tables
+0,california_schools,['frpm'],"['frpm', 'schools']"
+1,california_schools,['frpm'],"['frpm', 'schools']"
+2,california_schools,"['frpm', 'schools']",['schools']
+3,california_schools,"['frpm', 'schools']","['frpm', 'schools']"
+4,california_schools,"['frpm', 'schools']",['schools']
+5,california_schools,"['satscores', 'schools']","['satscores', 'schools']"
+6,california_schools,"['satscores', 'schools']","['satscores', 'schools']"
+7,california_schools,"['satscores', 'schools']","['satscores', 'schools']"
+8,california_schools,"['frpm', 'satscores']","['frpm', 'satscores']"
+9,california_schools,"['frpm', 'satscores']","['satscores', 'schools']"
+89,financial,"['account', 'district']","['account', 'district', 'trans']"
+90,financial,"['account', 'district', 'loan']","['account', 'district', 'loan']"
+91,financial,['district'],['district']
+92,financial,"['client', 'district']","['client', 'district']"
+93,financial,"['client', 'district']","['client', 'district']"
+94,financial,"['account', 'client', 'district']","['client', 'district']"
+95,financial,"['account', 'client', 'district']","['account', 'client', 'disp', 'district']"
+96,financial,"['account', 'disp']","['account', 'disp']"
+97,financial,"['account', 'disp']","['client', 'disp', 'trans']"
+98,financial,"['account', 'loan']","['account', 'loan']"
+195,toxicology,['bond'],['bond']
+196,toxicology,"['atom', 'molecule']","['atom', 'molecule']"
+197,toxicology,"['atom', 'bond']","['atom', 'bond']"
+198,toxicology,"['atom', 'bond', 'molecule']","['bond', 'molecule']"
+199,toxicology,"['atom', 'molecule']","['atom', 'molecule']"
+200,toxicology,"['bond', 'molecule']","['bond', 'molecule']"
+201,toxicology,"['atom', 'bond']","['atom', 'bond', 'connected']"
+202,toxicology,['bond'],['bond']
+203,toxicology,['atom'],['atom']
+204,toxicology,['molecule'],['molecule']
+340,card_games,['cards'],['cards']
+341,card_games,['cards'],['cards']
+342,card_games,['cards'],['cards']
+343,card_games,['cards'],['cards']
+344,card_games,"['cards', 'legalities']","['cards', 'legalities']"
+345,card_games,"['cards', 'legalities']","['cards', 'legalities']"
+346,card_games,"['cards', 'legalities']","['cards', 'legalities']"
+347,card_games,"['cards', 'rulings']","['cards', 'ruling']"
+348,card_games,"['cards', 'rulings']","['cards', 'ruling']"
+349,card_games,"['cards', 'rulings']","['cards', 'ruling']"
+531,codebase_community,['users'],['users']
+532,codebase_community,['users'],['users']
+533,codebase_community,['users'],['users']
+534,codebase_community,['users'],['users']
+535,codebase_community,['users'],['users']
+536,codebase_community,['users'],['users']
+537,codebase_community,"['posts', 'users']","['posts', 'users']"
+538,codebase_community,"['posts', 'users']","['posts', 'users']"
+539,codebase_community,"['posts', 'users']","['posts', 'users']"
+540,codebase_community,"['posts', 'users']",['posts']
+717,superhero,"['hero_power', 'superhero', 'superpower']","['hero_power', 'superhero', 'superpower']"
+718,superhero,"['hero_power', 'superpower']","['hero_power', 'superhero', 'superpower']"
+719,superhero,"['hero_power', 'superhero', 'superpower']","['hero_power', 'superhero', 'superpower']"
+720,superhero,"['hero_power', 'superhero']","['hero_power', 'superhero']"
+721,superhero,"['colour', 'superhero']","['colour', 'superhero']"
+722,superhero,"['colour', 'superhero']","['colour', 'superhero']"
+723,superhero,"['colour', 'hero_power', 'superhero', 'superpower']","['colour', 'hero_power', 'superhero', 'superpower']"
+724,superhero,"['colour', 'superhero']","['colour', 'superhero']"
+725,superhero,"['publisher', 'superhero']","['publisher', 'superhero']"
+726,superhero,"['publisher', 'superhero']",['superhero']
+846,formula_1,"['drivers', 'qualifying']","['drivers', 'qualifying', 'races', 'results']"
+847,formula_1,"['drivers', 'qualifying']","['drivers', 'laptimes', 'races']"
+848,formula_1,"['circuits', 'races']","['circuits', 'races']"
+849,formula_1,"['circuits', 'races']","['circuits', 'races']"
+850,formula_1,"['circuits', 'races']","['circuits', 'races']"
+851,formula_1,"['constructors', 'constructorstandings']","['circuits', 'constructors', 'constructorstandings']"
+852,formula_1,"['circuits', 'races']","['circuits', 'races']"
+853,formula_1,"['circuits', 'races']","['circuits', 'races']"
+854,formula_1,"['circuits', 'races']","['circuits', 'races']"
+855,formula_1,"['circuits', 'races']","['circuits', 'races']"
+1020,european_football_2,['player_attributes'],"['player', 'player_attributes']"
+1021,european_football_2,['player'],['player']
+1022,european_football_2,['player_attributes'],['player_attributes']
+1023,european_football_2,['player_attributes'],"['player', 'player_attributes']"
+1024,european_football_2,['player_attributes'],"['player', 'player_attributes']"
+1025,european_football_2,"['league', 'match']","['league', 'match']"
+1026,european_football_2,"['match', 'team']","['match', 'team']"
+1027,european_football_2,"['player', 'player_attributes']","['player', 'player_attributes']"
+1028,european_football_2,"['league', 'match', 'team']","['league', 'match']"
+1029,european_football_2,"['team', 'team_attributes']",['team_attributes']
+1149,thrombosis_prediction,['patient'],['patient']
+1150,thrombosis_prediction,['patient'],['patient']
+1151,thrombosis_prediction,['patient'],['patient']
+1152,thrombosis_prediction,['patient'],['patient']
+1153,thrombosis_prediction,"['laboratory', 'patient']","['laboratory', 'patient']"
+1154,thrombosis_prediction,"['examination', 'patient']","['examination', 'patient']"
+1155,thrombosis_prediction,"['laboratory', 'patient']","['laboratory', 'patient']"
+1156,thrombosis_prediction,"['examination', 'patient']","['examination', 'patient']"
+1157,thrombosis_prediction,"['examination', 'patient']","['examination', 'patient']"
+1158,thrombosis_prediction,"['laboratory', 'patient']","['laboratory', 'patient']"
+1312,student_club,"['major', 'member']","['major', 'member']"
+1313,student_club,"['major', 'member']","['major', 'member']"
+1314,student_club,"['major', 'member']","['major', 'member']"
+1315,student_club,"['attendance', 'event']","['attendance', 'event', 'member']"
+1316,student_club,"['attendance', 'event', 'member']","['attendance', 'event', 'member']"
+1317,student_club,"['attendance', 'event', 'member']","['attendance', 'event', 'member']"
+1318,student_club,"['attendance', 'event']","['attendance', 'event']"
+1319,student_club,"['major', 'member']","['major', 'member']"
+1320,student_club,"['attendance', 'event', 'member']","['attendance', 'event', 'member']"
+1321,student_club,"['attendance', 'event', 'member']","['attendance', 'event', 'member']"
+1470,debit_card_specializing,['gasstations'],['gasstations']
+1471,debit_card_specializing,['customers'],['customers']
+1472,debit_card_specializing,"['customers', 'yearmonth']",['yearmonth']
+1473,debit_card_specializing,"['customers', 'yearmonth']","['customers', 'yearmonth']"
+1474,debit_card_specializing,"['customers', 'yearmonth']","['customers', 'yearmonth']"
+1475,debit_card_specializing,"['customers', 'yearmonth']","['customers', 'yearmonth']"
+1476,debit_card_specializing,"['customers', 'yearmonth']","['customers', 'yearmonth']"
+1477,debit_card_specializing,"['customers', 'yearmonth']","['customers', 'transactions_1k']"
+1478,debit_card_specializing,"['customers', 'yearmonth']","['customers', 'yearmonth']"
+1479,debit_card_specializing,"['customers', 'yearmonth']","['customers', 'yearmonth']"
