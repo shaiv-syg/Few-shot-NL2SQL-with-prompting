@@ -117,6 +117,13 @@ def find_create_table_boundaries(create_table: str):
 
     return start_line, end_line
 
+def remove_duplicates(lst):
+    result = []
+    for item in lst:
+        if item not in result:
+            result.append(item)
+    return result
+
 
 def filter_columns_within_boundaries(create_table: str, start_line: int, end_line: int, columns_to_keep: List[str]
                                      ) -> Tuple[str, List[str]]:
@@ -137,7 +144,7 @@ def filter_columns_within_boundaries(create_table: str, start_line: int, end_lin
             filtered_lines.remove(line)
 
     filtered_sql = '\n\t'.join(filtered_lines)
-    ordered_columns = [col for col in columns_to_keep if col in ordered_columns]
+    ordered_columns = remove_duplicates(ordered_columns)
     return filtered_sql, ordered_columns
 
 
@@ -197,7 +204,7 @@ def table_descriptions_filtered_parser(database_dir, table_name, columns_to_keep
 
     table_df = pd.read_csv(file_path, encoding='latin-1')
     for _, row in table_df.iterrows():
-        column_name = str(row[0])
+        column_name = str(row[0]).strip()
         if column_name in columns_to_keep:
             try:
                 if pd.notna(row[2]):
