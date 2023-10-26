@@ -1,2 +1,0 @@
-question_id,gold_tables,predicted_tables, total_amount_of_table
-1, "[a, b, c]", ["c, d"], 3

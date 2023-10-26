@@ -1,0 +1,377 @@
+[
+    {
+        "db_name": "california_schools",
+        "table_name": "schools",
+        "description": "The \"schools\" table in the \"california_schools\" database is a comprehensive record of schools in California, uniquely identified by \"CDSCode\". It includes a wide range of information about each school, such as its name, location, contact details, and status. The table also provides details about the school's district and county, as well as its NCES identification numbers. The \"StatusType\" column indicates whether a school is active, closed, or merged. The table also includes information about the school's charter status, funding type, and the grade levels it serves. The \"OpenDate\" and \"ClosedDate\" columns provide information about the school's operational timeline. The table also includes geographical coordinates for each school, and contact details for up to three administrators. This table is crucial for queries related to school information, location, status, and administrative details."
+    },
+    {
+        "db_name": "california_schools",
+        "table_name": "satscores",
+        "description": "The \"satscores\" table in the \"california_schools\" database is a comprehensive record of SAT scores across different schools. Each record is uniquely identified by the \"cds\" (California Department Schools) code. The table includes essential details such as the school name (\"sname\"), district segment (\"dname\"), and county name (\"cname\"). It also provides information about the number of enrolled students from 1st to 12th grade (\"enroll12\") and the number of test takers (\"NumTstTakr\"). The table further breaks down the average scores in Reading, Math, and Writing (\"AvgScrRead\", \"AvgScrMath\", \"AvgScrWrite\") and the number of students scoring 1500 or above (\"NumGE1500\"). This table is crucial for analyzing school performance and student achievement in SAT across California. It can be linked to the \"schools\" table via the \"cds\" foreign key."
+    },
+    {
+        "db_name": "california_schools",
+        "table_name": "frpm",
+        "description": "The \"frpm\" table in the \"california_schools\" database is a comprehensive record of schools, uniquely identified by \"CDSCode\". It contains detailed information about each school, including its academic year, county and district codes, school code, county and district names, school name, district and school types, and educational option type. It also provides data on the school's National School Lunch Program (NSLP) provision status, charter school status, charter school number, charter funding type, and grade range. \n\nThe table also includes data on student enrollment and meal eligibility for two age groups: K-12 and ages 5-17. These data points include total enrollment, the number of students eligible for free meals, the percentage of students eligible for free meals, the number of students eligible for free or reduced-price meals (FRPM), and the percentage of students eligible for FRPM. \n\nThis table is crucial for queries related to school demographics, meal program eligibility, and charter school status. It can also be used to analyze trends in student enrollment and meal program eligibility over time. The \"CDSCode\" serves as a foreign key, linking this table to the \"schools\" table in the same database."
+    },
+    {
+        "db_name": "card_games",
+        "table_name": "rulings",
+        "description": "The \"rulings\" table in the \"card_games\" database is a record of specific rulings or decisions made, each uniquely identified by an \"id\". It includes the \"date\" when the ruling was made and a \"text\" field that provides a detailed description of the ruling. This table is essential for tracking changes in game rules over time and can be used in queries to understand the evolution of game rules or to clarify specific rulings."
+    },
+    {
+        "db_name": "card_games",
+        "table_name": "set_translations",
+        "description": "The \"set_translations\" table in the \"card_games\" database is designed to track individual card sets. Each set is uniquely identified by an \"id\". The table also stores the \"language\" of the card and the \"setCode\" which is specific to each set. The \"translation\" of the card is also stored, making this table useful for queries related to specific card sets, their languages, and translations."
+    },
+    {
+        "db_name": "card_games",
+        "table_name": "legalities",
+        "description": "The \"legalities\" table in the \"card_games\" database is a unique record of the legality status of cards in different play formats, identified by a unique \"id\". The \"format\" column specifies the play format, and the \"status\" column indicates whether a card is legal in that format. The \"uuid\" column, which is a foreign key referencing the \"cards\" table, links each legality entry to a specific card. This table is crucial for determining the legality of cards in various play formats."
+    },
+    {
+        "db_name": "card_games",
+        "table_name": "cards",
+        "description": "The \"cards\" table in the \"card_games\" database is a comprehensive repository for card game data, with each card uniquely identified by an \"id\". The table contains a wealth of information about each card, including its artist, name, availability, border color, color identity, and mana cost. It also provides details about the card's special features and characteristics, such as whether it has foil, is full art, is oversized, is a promo, is a reprint, and more. The table also includes information about the card's power, toughness, type, and subtypes. This table is crucial for queries related to card game data analysis, card characteristics, and game mechanics."
+    },
+    {
+        "db_name": "card_games",
+        "table_name": "sets",
+        "description": "The \"sets\" table in the \"card_games\" database is a comprehensive record of card sets, each uniquely identified by an \"id\". It includes essential attributes such as the \"baseSetSize\", \"totalSetSize\", and \"type\" of the set, along with the \"releaseDate\". The \"code\" and \"name\" provide identifying information, while the \"booster\" column offers a detailed breakdown of the cards in a booster pack. The table also includes various flags indicating the set's availability in foil, non-foil, online, foreign, or preview versions. The \"mcmId\", \"mtgoCode\", and \"tcgplayerGroupId\" provide links to external platforms. This table is crucial for queries related to set details, availability, and external platform identifiers."
+    },
+    {
+        "db_name": "card_games",
+        "table_name": "foreign_data",
+        "description": "The \"foreign_data\" table in the \"card_games\" database is a comprehensive collection of foreign language data for card games. Each entry is uniquely identified by an \"id\" and contains information about the card in a specific foreign language, including the \"flavorText,\" \"name,\" \"text,\" and \"type\" of the card. The \"multiverseid\" provides a unique identifier for the card in the multiverse. The \"uuid\" column establishes a relationship with the \"cards\" table, linking each foreign language entry to its corresponding card. This table is crucial for queries involving multilingual card data and for linking this data back to the original card entries."
+    },
+    {
+        "db_name": "codebase_community",
+        "table_name": "postLinks",
+        "description": "The \"postLinks\" table in the \"codebase_community\" database serves as a connection hub for related posts. Each entry is uniquely identified by the \"Id\" and contains essential information such as \"CreationDate\", \"PostId\", \"RelatedPostId\", and \"LinkTypeId\". The \"PostId\" and \"RelatedPostId\" establish a relationship between two posts, while the \"LinkTypeId\" provides context for the nature of this relationship. This table is crucial for queries aimed at understanding the interconnectivity and relationships between different posts in the community."
+    },
+    {
+        "db_name": "codebase_community",
+        "table_name": "postHistory",
+        "description": "The \"postHistory\" table in the \"codebase_community\" database serves as a comprehensive log of all post activities. Each entry is uniquely identified by the \"Id\" and contains crucial information such as the \"PostId\", \"PostHistoryTypeId\", and \"RevisionGUID\". The table also records the \"CreationDate\" of the post, the \"UserId\" of the poster, and the actual \"Text\" content of the post. Additional fields like \"Comment\" and \"UserDisplayName\" provide context and user identification. This table is essential for tracking post revisions, user activities, and post interactions within the community."
+    },
+    {
+        "db_name": "codebase_community",
+        "table_name": "badges",
+        "description": "The \"badges\" table in the \"codebase_community\" database is a record of achievements earned by users, uniquely identified by the \"Id\". It contains key information such as the \"UserId\" which links to the unique id of the user who earned the badge, the \"Name\" of the badge obtained, and the \"Date\" when the badge was earned. This table is crucial for tracking user progress and achievements within the community, and can be used in queries to generate user profiles or leaderboards."
+    },
+    {
+        "db_name": "codebase_community",
+        "table_name": "posts",
+        "description": "The \"posts\" table in the \"codebase_community\" database serves as a comprehensive record of all posts made within the community. Each post is uniquely identified by the \"Id\" and contains a wealth of information including the \"PostTypeId\", \"AcceptedAnswerId\", \"CreationDate\", \"Score\", and \"ViewCount\". The \"Body\" of the post is stored, along with the \"OwnerUserId\" and \"LastActivityDate\". The table also keeps track of the \"Title\", \"Tags\", \"AnswerCount\", \"CommentCount\", and \"FavoriteCount\" for each post. Additional details such as the \"LastEditorUserId\", \"LastEditDate\", \"CommunityOwnedDate\", \"ParentId\", and \"ClosedDate\" provide further context about the post's lifecycle and interactions. The \"OwnerDisplayName\" and \"LastEditorDisplayName\" offer a more personal touch, linking posts to their creators and editors. This table is crucial for queries related to post analytics, user activity, and community engagement."
+    },
+    {
+        "db_name": "codebase_community",
+        "table_name": "users",
+        "description": "The \"users\" table in the \"codebase_community\" database serves as a comprehensive profile directory for community members. Each user is uniquely identified by the \"Id\" and \"AccountId\". The table includes personal details like \"DisplayName\", \"Location\", \"AboutMe\", and \"Age\", along with activity-related data such as \"Reputation\", \"CreationDate\", \"LastAccessDate\", \"Views\", \"UpVotes\", and \"DownVotes\". The \"WebsiteUrl\" and \"ProfileImageUrl\" provide direct links to the user's personal website and profile image, respectively. The \"Reputation\" and voting data can be used to gauge a user's influence within the community. This table is crucial for queries related to user activity, influence, and demographic analysis."
+    },
+    {
+        "db_name": "codebase_community",
+        "table_name": "tags",
+        "description": "The \"tags\" table in the \"codebase_community\" database is a comprehensive record of tags used in the community, each uniquely identified by \"Id\". It includes the \"TagName\" and the \"Count\" of posts that contain this tag, providing an indication of the tag's popularity. The table also contains \"ExcerptPostId\" and \"WikiPostId\" which are references to posts related to the tag. This table is crucial for queries related to tag-based post categorization, popularity analysis, and linking tags to their related posts."
+    },
+    {
+        "db_name": "codebase_community",
+        "table_name": "votes",
+        "description": "The \"votes\" table in the \"codebase_community\" database is a comprehensive record of voting activities. Each vote is uniquely identified by \"Id\" and is associated with a specific post and user through \"PostId\" and \"UserId\", respectively. The \"VoteTypeId\" indicates the type of vote cast, while \"CreationDate\" records when the vote was made. The \"BountyAmount\" field captures any bounty amount associated with the vote. This table is crucial for tracking user engagement, post popularity, and bounty distribution. It is linked to the \"posts\" and \"users\" tables, enabling complex queries across user activities and post interactions."
+    },
+    {
+        "db_name": "codebase_community",
+        "table_name": "comments",
+        "description": "The \"comments\" table in the \"codebase_community\" database is a comprehensive record of user comments, each uniquely identified by an \"Id\". It contains key information such as the \"PostId\" which links the comment to a specific post, the \"Score\" which rates the comment on a scale of 0 to 100, and the \"Text\" which provides the detailed content of the comment. The \"CreationDate\" and \"UserId\" fields track the comment's origin, while the \"UserDisplayName\" offers a more human-readable identifier for the user. This table is crucial for queries related to user engagement, sentiment analysis based on scores, and tracking user activity."
+    },
+    {
+        "db_name": "debit_card_specializing",
+        "table_name": "customers",
+        "description": "The \"customers\" table in the \"debit_card_specializing\" database serves as a unique identifier for customers, with each customer having a unique \"CustomerID\". It also provides information about the customer's segment (\"Segment\") and the currency they use (\"Currency\"). This table is essential for queries related to customer identification, understanding customer segmentation, and determining the currency used by customers."
+    },
+    {
+        "db_name": "debit_card_specializing",
+        "table_name": "gasstations",
+        "description": "The \"gasstations\" table in the \"debit_card_specializing\" database serves as a comprehensive record of gas stations, each uniquely identified by \"GasStationID\". It includes key attributes such as \"ChainID\", which links to the chain the gas station belongs to, \"Country\" indicating the location of the gas station, and \"Segment\" describing the market segment the chain targets. This table is crucial for queries related to identifying gas stations, their chains, and understanding their market positioning."
+    },
+    {
+        "db_name": "debit_card_specializing",
+        "table_name": "products",
+        "description": "The \"products\" table in the \"debit_card_specializing\" database serves as a simple catalog of products, each uniquely identified by \"ProductID\". It contains a brief \"Description\" of each product. This table is essential for queries related to product identification and description, and it ensures that each product has a unique identifier."
+    },
+    {
+        "db_name": "debit_card_specializing",
+        "table_name": "yearmonth",
+        "description": "The \"yearmonth\" table in the \"debit_card_specializing\" database tracks the consumption of each customer on a monthly basis. The table is uniquely identified by a composite primary key consisting of \"Date\" and \"CustomerID\". The \"Date\" column is in the format of YYYYMM, representing the year and month of the record. The \"Consumption\" column indicates the total consumption of the customer for that particular month. This table is linked to the \"customers\" table through a foreign key relationship with \"CustomerID\", allowing for queries that correlate customer information with their monthly consumption."
+    },
+    {
+        "db_name": "debit_card_specializing",
+        "table_name": "transactions_1k",
+        "description": "The \"transactions_1k\" table in the \"debit_card_specializing\" database is a comprehensive record of all transactions. Each transaction is uniquely identified by \"TransactionID\". It includes details such as the \"Date\" and \"Time\" of the transaction, the \"CustomerID\" and \"CardID\" involved, the \"GasStationID\" where the transaction took place, and the \"ProductID\" purchased. The \"Amount\" and \"Price\" fields provide financial details of the transaction. This table is crucial for tracking customer behavior, analyzing sales trends, and auditing financial transactions."
+    },
+    {
+        "db_name": "european_football_2",
+        "table_name": "Team_Attributes",
+        "description": "The \"Team_Attributes\" table in the \"european_football_2\" database provides a comprehensive overview of various team attributes, uniquely identified by the \"id\". It includes FIFA and API identifiers for teams, \"team_fifa_api_id\" and \"team_api_id\" respectively, and the date of record. The table captures a wide range of team attributes, from build-up play characteristics like speed, dribbling, and passing, to chance creation strategies and defensive tactics. Each attribute is quantified and classified, providing both numerical and categorical data. This table is crucial for queries analyzing team strategies, comparing team attributes, and tracking changes over time. It also links to the \"Team\" table through \"team_api_id\" and \"team_fifa_api_id\", enabling further exploration of team-related data."
+    },
+    {
+        "db_name": "european_football_2",
+        "table_name": "Player",
+        "description": "The \"Player\" table in the \"european_football_2\" database serves as a comprehensive record of football players, each uniquely identified by an \"id\". It includes essential details such as the \"player_name\", \"birthday\", \"height\", and \"weight\". The table also maintains two distinct API identifiers for each player: \"player_api_id\" and \"player_fifa_api_id\", which can be used to link to external data sources or APIs. The \"birthday\" column can be used to compare players' ages. This table is crucial for queries related to player details, age comparisons, and linking to external football APIs."
+    },
+    {
+        "db_name": "european_football_2",
+        "table_name": "Match",
+        "description": "The \"Match\" table in the \"european_football_2\" database is a comprehensive record of football matches, uniquely identified by the \"id\". It contains detailed information about each match, including the \"country_id\" and \"league_id\" it belongs to, the \"season\" and \"stage\" it was played in, and the \"date\" of the match. The table also records the \"home_team_api_id\" and \"away_team_api_id\", along with the goals scored by each team (\"home_team_goal\" and \"away_team_goal\"). \n\nThe table also provides a detailed breakdown of the match events, including the \"goal\", \"shoton\", \"shotoff\", \"foulcommit\", \"card\", \"cross\", \"corner\", and \"possession\". \n\nThe table has foreign key relationships with the \"Player\" and \"Team\" tables, linking each player and team involved in the match to their respective records. This table is crucial for queries related to match statistics, player performance, and team performance."
+    },
+    {
+        "db_name": "european_football_2",
+        "table_name": "League",
+        "description": "The \"League\" table in the \"european_football_2\" database is a key reference for football leagues, each uniquely identified by an \"id\". It contains essential attributes such as \"name\" of the league and a \"country_id\" that links to the \"country\" table, providing information about the country in which the league is based. This table is crucial for queries that aim to retrieve league details, and it establishes a relationship between leagues and their respective countries."
+    },
+    {
+        "db_name": "european_football_2",
+        "table_name": "Country",
+        "description": "The \"Country\" table in the \"european_football_2\" database serves as a simple reference for countries, each uniquely identified by an \"id\". It contains only two columns: \"id\" and \"name\". The \"name\" column holds the name of the country. This table is essential for queries that need to link other tables that use country identifiers to their respective country names."
+    },
+    {
+        "db_name": "european_football_2",
+        "table_name": "Player_Attributes",
+        "description": "The \"Player_Attributes\" table in the \"european_football_2\" database is a comprehensive record of football player attributes, uniquely identified by \"id\". It contains key identifiers like \"player_fifa_api_id\" and \"player_api_id\" that link to the \"Player\" table. The table provides a snapshot of player performance metrics on a specific \"date\", including \"overall_rating\", \"potential\", and a host of specific skill scores such as \"crossing\", \"finishing\", \"dribbling\", and \"free_kick_accuracy\", all rated on a scale of 0-100 by FIFA. It also records the player's \"preferred_foot\" and their \"attacking_work_rate\" and \"defensive_work_rate\". Goalkeeping skills are also tracked with metrics like \"gk_diving\", \"gk_handling\", and \"gk_reflexes\". This table is crucial for queries analyzing player performance, potential, and skill set."
+    },
+    {
+        "db_name": "european_football_2",
+        "table_name": "Team",
+        "description": "The \"Team\" table in the \"european_football_2\" database serves as a comprehensive record of football teams. Each team is uniquely identified by an \"id\". The table also includes the \"team_api_id\" and \"team_fifa_api_id\" which are specific identifiers used in the team's API and FIFA API respectively. The \"team_long_name\" and \"team_short_name\" provide the full and abbreviated names of the teams. This table is crucial for queries related to team information and can be linked to other tables using the unique identifiers."
+    },
+    {
+        "db_name": "financial",
+        "table_name": "loan",
+        "description": "The \"loan\" table in the \"financial\" database is a comprehensive record of loan details, uniquely identified by \"loan_id\". It contains crucial information such as the \"account_id\" it is associated with, the \"date\" of loan approval, the \"amount\" approved, the \"duration\" of the loan, and the \"payments\" to be made monthly. The \"status\" column provides insight into the repayment status of the loan, with codes 'A', 'B', 'C', and 'D' representing different scenarios. This table is linked to the \"account\" table through a foreign key, making it essential for queries related to loan details, account relationships, and repayment status."
+    },
+    {
+        "db_name": "financial",
+        "table_name": "client",
+        "description": "The \"client\" table in the \"financial\" database serves as a record of all clients, each uniquely identified by \"client_id\". It includes essential client details such as \"gender\" and \"birth_date\". The \"district_id\" field, which is a foreign key referencing the \"district\" table, provides information about the location of the branch where the client is registered. This table is crucial for queries related to client demographics, age analysis, and geographical distribution of clients."
+    },
+    {
+        "db_name": "financial",
+        "table_name": "district",
+        "description": "The \"district\" table in the \"financial\" database serves as a comprehensive record of various districts, each uniquely identified by \"district_id\". It includes essential details such as the district's name (\"A2\"), region (\"A3\"), and the ratio of urban inhabitants (\"A10\"). The table also provides economic indicators like average salary (\"A11\"), unemployment rates for 1995 and 1996 (\"A12\" and \"A13\"), and the number of entrepreneurs per 1000 inhabitants (\"A14\"). Crime rates for 1995 and 1996 are also recorded (\"A15\" and \"A16\"). The columns \"A5\", \"A6\", \"A7\", and \"A8\" represent hierarchical administrative divisions from municipality to region. This table is crucial for queries related to regional economic, demographic, and crime data."
+    },
+    {
+        "db_name": "financial",
+        "table_name": "trans",
+        "description": "The \"trans\" table in the \"financial\" database is a comprehensive record of all transactions, uniquely identified by \"trans_id\". It includes crucial details such as the \"account_id\" it pertains to, the \"date\" of the transaction, the \"type\" of transaction (credit or withdrawal), and the \"operation\" or mode of transaction. The \"amount\" and \"balance\" fields provide financial details of the transaction, both denoted in USD. This table is linked to the \"account\" table through the foreign key \"account_id\". It is essential for tracking individual account transactions, analyzing transaction patterns, and maintaining a record of account balances."
+    },
+    {
+        "db_name": "financial",
+        "table_name": "account",
+        "description": "The \"account\" table in the \"financial\" database is a key resource for tracking individual accounts, each uniquely identified by \"account_id\". It includes essential details such as the \"district_id\" which refers to the location of the branch, the \"frequency\" of the account, and the \"date\" of account creation. The \"district_id\" column is a foreign key that links to the \"district\" table, providing additional geographical context. This table is crucial for queries related to account management, tracking account creation over time, and understanding the distribution of accounts across different branches."
+    },
+    {
+        "db_name": "financial",
+        "table_name": "card",
+        "description": "The \"card\" table in the \"financial\" database is a comprehensive record of credit cards, each uniquely identified by \"card_id\". It includes essential attributes such as \"disp_id\" which is a foreign key referencing the \"disp\" table, \"type\" indicating the class of the credit card, and \"issued\" specifying the date the card was issued. The \"type\" attribute can have three distinct values: \"junior\", \"classic\", and \"gold\", representing different levels of credit cards. This table is crucial for queries related to credit card information, tracking card issuance, and linking cards to their respective dispositions."
+    },
+    {
+        "db_name": "financial",
+        "table_name": "order",
+        "description": "The \"order\" table in the \"financial\" database is a comprehensive record of financial transactions, each uniquely identified by an \"order_id\". It contains key details such as the \"account_id\" from which the transaction originates, the recipient's \"bank_to\" and \"account_to\", and the \"amount\" debited. The \"k_symbol\" column provides insight into the purpose of the payment, with specific codes for insurance, household, leasing, and loan payments. This table is crucial for tracking individual transactions, understanding payment patterns, and linking orders to specific accounts via the \"account_id\". The table also has a foreign key relationship with the \"account\" table, providing a direct link between each order and its corresponding account."
+    },
+    {
+        "db_name": "financial",
+        "table_name": "disp",
+        "description": "The \"disp\" table in the \"financial\" database serves as a bridge between clients and their respective accounts. Each record is uniquely identified by \"disp_id\". The \"client_id\" and \"account_id\" columns are foreign keys referencing the \"client\" and \"account\" tables respectively, establishing a relationship between clients and accounts. The \"type\" column indicates the disposition type, which can be \"OWNER\", \"USER\", or \"DISPONENT\", providing insights into the client's authority over the account. This table is crucial for queries involving account access rights and client-account relationships."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "circuits",
+        "description": "The \"circuits\" table in the \"formula_1\" database serves as a comprehensive directory of racing circuits. Each circuit is uniquely identified by \"circuitId\" and includes essential details such as the circuit's full name (\"name\"), reference name (\"circuitRef\"), location (\"location\"), and country (\"country\"). The table also provides geographical coordinates (\"lat\" and \"lng\") for precise location tracking. The \"url\" field offers a direct link to more detailed information about each circuit. This table is crucial for queries related to circuit information and geographical analysis in the context of Formula 1 racing."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "status",
+        "description": "The \"status\" table in the \"formula_1\" database is a simple yet crucial table that categorizes the outcome of a race for a driver. Each status is uniquely identified by \"statusId\". The \"status\" column provides a textual description of the outcome, such as \"Finished\", \"Disqualified\", or \"Accident\". This table is essential for queries analyzing race outcomes and driver performance."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "drivers",
+        "description": "The \"drivers\" table in the \"formula_1\" database serves as a comprehensive record of Formula 1 drivers, each uniquely identified by \"driverId\". It includes personal details such as \"forename\", \"surname\", \"dob\", and \"nationality\". The \"driverRef\" and \"code\" fields provide additional identifiers, with the latter being an abbreviated code for drivers. The \"number\" field represents the driver's racing number. If the \"code\" field is null or empty, it indicates that the driver does not have a code. The \"url\" field provides a link to the driver's introduction page. This table is crucial for queries related to driver information and their racing history."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "driverStandings",
+        "description": "The \"driverStandings\" table in the \"formula_1\" database is a comprehensive record of driver performances in races. Each entry is uniquely identified by \"driverStandingsId\" and includes key details such as the \"raceId\" and \"driverId\", which link to the respective races and drivers tables. The table also records the points earned by a driver in a race, their position, and the number of wins. This table is crucial for tracking driver performance over time and determining race winners."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "races",
+        "description": "The \"races\" table in the \"formula_1\" database is a comprehensive record of Formula 1 races, each uniquely identified by \"raceId\". It includes essential details such as the \"year\" and \"round\" of the race, the \"circuitId\" indicating the location, the \"name\" of the race, and the \"date\" and \"time\" it took place. The \"url\" provides a link to more detailed information about each race. This table has relationships with the \"seasons\" and \"circuits\" tables through the \"year\" and \"circuitId\" foreign keys respectively. It is crucial for queries related to specific races, their timing, and their associated circuits."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "constructors",
+        "description": "The \"constructors\" table in the \"formula_1\" database serves as a comprehensive record of Formula 1 team constructors, each uniquely identified by \"constructorId\". It includes essential details such as the \"constructorRef\" (reference name), the full \"name\" of the constructor, and the \"nationality\". The \"url\" provides a direct link to the constructor's detailed introduction, facilitating further exploration. This table is crucial for queries related to constructor information, their nationality, and for linking to their detailed profiles."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "constructorResults",
+        "description": "The \"constructorResults\" table in the \"formula_1\" database is a comprehensive record of the performance of constructors in various races. Each entry is uniquely identified by \"constructorResultsId\". The table includes key attributes such as \"raceId\", \"constructorId\", \"points\", and \"status\". The \"raceId\" and \"constructorId\" columns are foreign keys that link to the \"races\" and \"constructors\" tables respectively, enabling queries that connect race results with specific races and constructors. The \"points\" column records the points earned by a constructor in a race, while the \"status\" column provides additional information about the constructor's status. This table is crucial for analyzing constructor performance across different races."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "lapTimes",
+        "description": "The \"lapTimes\" table in the \"formula_1\" database is a comprehensive record of each lap completed by a driver in a race. Each entry is uniquely identified by a combination of \"raceId\", \"driverId\", and \"lap\". The table includes details such as the \"position\" of the driver during the lap, the \"time\" taken to complete the lap in minutes and seconds, and the exact duration in \"milliseconds\". This table is linked to the \"races\" and \"drivers\" tables through \"raceId\" and \"driverId\" respectively. It is crucial for queries analyzing race performance, driver consistency, and lap-by-lap progression."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "qualifying",
+        "description": "The \"qualifying\" table in the \"formula_1\" database is a comprehensive record of Formula 1 race qualifying sessions. Each entry, uniquely identified by \"qualifyId\", represents a driver's performance in a specific race's qualifying rounds. The table includes references to the \"raceId\", \"driverId\", and \"constructorId\", linking to the respective races, drivers, and constructors tables. The \"number\" column represents the car number, while \"position\" indicates the driver's position on the track. The \"q1\", \"q2\", and \"q3\" columns record the driver's lap times in the three qualifying rounds, with only the top performers from each round progressing to the next. This table is crucial for analyzing driver and constructor performance, race starting positions, and the impact of qualifying times on race outcomes."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "pitStops",
+        "description": "The \"pitStops\" table in the \"formula_1\" database is a detailed record of pit stops made during races. Each entry is uniquely identified by a combination of \"raceId\", \"driverId\", and \"stop\" number. The table includes crucial information such as the \"lap\" number when the pit stop occurred, the exact \"time\" of the stop, its \"duration\", and the duration in \"milliseconds\". This table is linked to the \"races\" and \"drivers\" tables through \"raceId\" and \"driverId\" respectively, establishing a relationship between races, drivers, and their pit stops. This table is essential for queries analyzing pit stop efficiency and its impact on race outcomes."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "seasons",
+        "description": "The \"seasons\" table in the \"formula_1\" database serves as a chronological record of Formula One seasons, uniquely identified by the \"year\". It contains a direct link to the Wikipedia page for each season through the \"url\" attribute. This table is essential for queries that need to retrieve information about a specific Formula One season or to provide a historical overview of the sport."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "constructorStandings",
+        "description": "The \"constructorStandings\" table in the \"formula_1\" database is a comprehensive record of constructor standings in various races. Each entry is uniquely identified by \"constructorStandingsId\". It includes key details such as the \"raceId\" and \"constructorId\", which are foreign keys referencing the \"races\" and \"constructors\" tables respectively. The table also records the points earned, the position secured, and the number of wins in each race. This table is crucial for queries related to the performance of constructors in different races, their standings, and their overall wins."
+    },
+    {
+        "db_name": "formula_1",
+        "table_name": "results",
+        "description": "The \"results\" table in the \"formula_1\" database is a comprehensive record of race results, uniquely identified by \"resultId\". It contains key details such as the \"raceId\", \"driverId\", and \"constructorId\", which link to other tables for additional context. The table also includes race-specific data like the grid position (\"grid\"), finishing position (\"position\"), and total points earned (\"points\"). Time-related data, such as total race time (\"time\") and fastest lap time (\"fastestLapTime\"), provide insights into performance. The table is crucial for queries related to race outcomes, driver performance, and constructor performance."
+    },
+    {
+        "db_name": "student_club",
+        "table_name": "income",
+        "description": "The \"income\" table in the \"student_club\" database serves as a record of all financial inflows to the club. Each entry is uniquely identified by an \"income_id\". The table captures essential details such as the \"date_received\", the \"amount\" of funds (in dollars), and the \"source\" of the funds, which could be dues or the annual university allocation. Additional details about the receipt of funds can be found in the \"notes\" column. The \"link_to_member\" column provides a connection to the member associated with the income. This table is crucial for tracking the club's income sources and amounts, and for linking income to specific club members."
+    },
+    {
+        "db_name": "student_club",
+        "table_name": "budget",
+        "description": "The \"budget\" table in the \"student_club\" database is a comprehensive record of financial planning and expenditure for various events. Each entry is uniquely identified by \"budget_id\" and is associated with a specific event through \"link_to_event\", which references the \"Event\" table. The table provides detailed financial information, including the budgeted \"amount\", the \"spent\" amount, and the \"remaining\" budget for each category such as advertisement, food, parking, etc. The \"event_status\" column indicates whether the event is closed, open, or still in planning, which helps in understanding the potential changes in the budget. This table is crucial for tracking and managing the club's finances and for planning future events."
+    },
+    {
+        "db_name": "student_club",
+        "table_name": "zip_code",
+        "description": "The \"zip_code\" table in the \"student_club\" database is a comprehensive reference for US postal codes. Each entry is uniquely identified by the \"zip_code,\" a five-digit number. The table provides detailed geographical information, including the \"city,\" \"county,\" and \"state\" associated with each ZIP code. It also includes a \"short_state\" column for state abbreviations. The \"type\" column categorizes ZIP codes into 'Standard', 'PO Box', or 'Unique', providing context about the nature of the location. This table is crucial for queries requiring location-based filtering or geographical analysis."
+    },
+    {
+        "db_name": "student_club",
+        "table_name": "expense",
+        "description": "The \"expense\" table in the \"student_club\" database is a comprehensive record of all expenditures incurred by the club. Each expense is uniquely identified by \"expense_id\" and includes details such as \"expense_description,\" \"expense_date,\" and \"cost.\" The \"approved\" column indicates whether the expense has been approved or not. The table also maintains a relationship with the club members and the budget through \"link_to_member\" and \"link_to_budget\" respectively. This table is crucial for tracking and managing the club's finances, and it can be used to generate reports on spending patterns, budget adherence, and member expenses."
+    },
+    {
+        "db_name": "student_club",
+        "table_name": "member",
+        "description": "The \"member\" table in the \"student_club\" database serves as a comprehensive directory of club members, each uniquely identified by \"member_id\". It includes personal details such as \"first_name\", \"last_name\", \"email\", and \"phone\", as well as club-specific information like the \"position\" held by the member and their preferred \"t_shirt_size\". The \"zip\" field provides geographical data about the member's hometown. The \"link_to_major\" field is a key identifier that links to the \"Major\" table, providing information about the member's academic major. This table is essential for managing member information, communication, and club logistics."
+    },
+    {
+        "db_name": "student_club",
+        "table_name": "attendance",
+        "description": "The \"attendance\" table in the \"student_club\" database is designed to track the attendance of club members at various events. It is uniquely identified by two key columns: \"link_to_event\" and \"link_to_member\". The \"link_to_event\" column references the unique identifier of the event from the \"Event\" table, while the \"link_to_member\" column references the unique identifier of the member from the \"Member\" table. This table is crucial for queries related to event attendance, member participation, and correlating member engagement with specific events."
+    },
+    {
+        "db_name": "student_club",
+        "table_name": "event",
+        "description": "The \"event\" table in the \"student_club\" database serves as a comprehensive record of all club events. Each event is uniquely identified by the \"event_id\". The table includes essential details such as the \"event_name\", \"event_date\", \"type\", \"notes\", \"location\", and the \"status\" of the event. The \"status\" can be one of three values: 'Open', 'Closed', or 'Planning', indicating the current phase of the event. The \"type\" field categorizes the event, such as a game, social gathering, or election. This table is crucial for tracking past events, planning future ones, and providing an overview of the club's activities."
+    },
+    {
+        "db_name": "student_club",
+        "table_name": "major",
+        "description": "The \"major\" table in the \"student_club\" database serves as a unique catalog for academic majors, each identified by a \"major_id\". It includes essential details such as the \"major_name\", the \"department\" offering the major, and the \"college\" housing that department. This table is crucial for queries related to academic majors, their respective departments, and colleges."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "gender",
+        "description": "The \"gender\" table in the \"superhero\" database serves as a simple reference for superhero genders, uniquely identified by an \"id\". It contains a single attribute, \"gender\", which specifies the gender of the superhero as Male, Female, or N/A. This table is essential for queries that categorize or filter superheroes based on gender."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "superpower",
+        "description": "The \"superpower\" table in the \"superhero\" database serves as a unique catalog of superpowers, each identified by a distinct \"id\". It contains a single attribute, \"power_name\", which describes the name of the superpower. This table is essential for queries related to identifying and categorizing superpowers."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "publisher",
+        "description": "The \"publisher\" table in the \"superhero\" database serves as a unique registry for comic book publishers, identified by the \"id\" field. It contains a single attribute, \"publisher_name\", which represents the name of the publisher. This table is essential for queries that aim to associate superheroes with their respective publishers."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "superhero",
+        "description": "The \"superhero\" table in the \"superhero\" database is a comprehensive catalog of superheroes, each uniquely identified by an \"id\". It includes essential attributes such as \"superhero_name\", \"full_name\", \"height_cm\", and \"weight_kg\". The table also contains several foreign keys linking to other tables, including \"gender_id\", \"eye_colour_id\", \"hair_colour_id\", \"skin_colour_id\", \"race_id\", \"publisher_id\", and \"alignment_id\", which provide additional details about the superhero's characteristics, race, publisher, and alignment. This table is crucial for queries related to superhero attributes, their publishers, and their physical characteristics."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "colour",
+        "description": "The \"colour\" table in the \"superhero\" database serves as a reference for various colors associated with superhero attributes like skin, eye, or hair color. Each color is uniquely identified by an \"id\". The \"colour\" field describes the actual color. This table is essential for queries that involve color-based categorization or filtering of superheroes."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "attribute",
+        "description": "The \"attribute\" table in the \"superhero\" database serves as a unique catalog of superhero characteristics or qualities, identified by an \"id\". It contains a single attribute, \"attribute_name\", which can represent a variety of traits, both physical (like superhuman strength or speed) and personal (like exceptional intelligence or bravery). This table is crucial for queries aimed at understanding and categorizing the capabilities of different superheroes."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "hero_power",
+        "description": "The \"hero_power\" table in the \"superhero\" database serves as a junction table that maps superheroes to their respective superpowers. Each row represents a specific power possessed by a superhero, identified by \"hero_id\" and \"power_id\". These identifiers are foreign keys that reference the \"id\" in the \"superhero\" and \"superpower\" tables respectively. This table is crucial for queries that aim to analyze the correlation between superheroes and their powers, or to identify the powers of a specific superhero."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "race",
+        "description": "The \"race\" table in the \"superhero\" database serves as a reference for the various races or species that superheroes can belong to. Each entry is uniquely identified by an \"id\". The \"race\" column describes the specific group or species the superhero belongs to, which can range from human to alien or other unique classifications. This table is essential for queries that aim to categorize superheroes based on their race or species."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "alignment",
+        "description": "The \"alignment\" table in the \"superhero\" database serves as a classification system for superheroes based on their moral and ethical stance. Each entry is uniquely identified by an \"id\" and is associated with an \"alignment\" value, which can be \"Good\", \"Bad\", or \"Neutral\". This table is crucial for queries that aim to categorize superheroes based on their behavior or overall attitude. It can be used to understand the character's motivations and actions, providing a deeper insight into their roles in their respective narratives."
+    },
+    {
+        "db_name": "superhero",
+        "table_name": "hero_attribute",
+        "description": "The \"hero_attribute\" table in the \"superhero\" database is a relational table that links superheroes to their respective attributes. Each entry is uniquely identified by a combination of \"hero_id\" and \"attribute_id\", which are foreign keys referencing the \"superhero\" and \"attribute\" tables respectively. The \"attribute_value\" column quantifies the level of a particular attribute for a superhero, indicating their proficiency or power in that area. This table is crucial for queries comparing superheroes based on specific attributes or determining the most powerful superhero in a particular area."
+    },
+    {
+        "db_name": "thrombosis_prediction",
+        "table_name": "Laboratory",
+        "description": "The \"Laboratory\" table in the \"thrombosis_prediction\" database is a comprehensive record of various laboratory tests conducted on patients, uniquely identified by \"ID\" and \"Date\". It includes a wide range of test results such as \"GOT\", \"GPT\", \"LDH\", \"ALP\", \"TP\", \"ALB\", \"UA\", \"UN\", \"CRE\", \"T-BIL\", \"T-CHO\", \"TG\", \"CPK\", \"GLU\", \"WBC\", \"RBC\", \"HGB\", \"HCT\", \"PLT\", \"PT\", \"APTT\", \"FG\", \"PIC\", \"TAT\", \"TAT2\", \"U-PRO\", \"IGG\", \"IGA\", \"IGM\", \"CRP\", \"RA\", \"RF\", \"C3\", \"C4\", \"RNP\", \"SM\", \"SC170\", \"SSA\", \"SSB\", \"CENTROMEA\", \"DNA\", \"DNA-II\". Each of these columns represents a specific laboratory test, and the values are the results of these tests. The table is linked to the \"Patient\" table through the foreign key \"ID\". This table is crucial for queries related to patient's laboratory test results, tracking changes over time, and predicting thrombosis based on these results."
+    },
+    {
+        "db_name": "thrombosis_prediction",
+        "table_name": "Patient",
+        "description": "The \"Patient\" table in the \"thrombosis_prediction\" database serves as a comprehensive record of patient information. Each patient is uniquely identified by the \"ID\" column. The table includes demographic data such as \"SEX\" and \"Birthday\", as well as medical history details like \"First Date\" of hospital visit, \"Admission\" status, and \"Diagnosis\". The \"Description\" column provides the date when the patient's data was first recorded. This table is crucial for queries related to patient demographics, medical history, and disease diagnosis, and can be used to predict thrombosis risk based on these factors."
+    },
+    {
+        "db_name": "thrombosis_prediction",
+        "table_name": "Examination",
+        "description": "The \"Examination\" table in the \"thrombosis_prediction\" database is a comprehensive record of patient examinations, uniquely identified by the \"ID\" which also links to the \"Patient\" table. It includes crucial medical data such as concentrations of various antibodies (\"aCL IgG\", \"aCL IgM\", \"ANA\", \"aCL IgA\"), the pattern observed in the ANA examination (\"ANA Pattern\"), and the diagnosis (\"Diagnosis\"). The table also records the degree of coagulation (\"KCT\", \"RVVT\", \"LAC\"), other observed symptoms (\"Symptoms\"), and the degree of thrombosis (\"Thrombosis\"). This table is essential for queries related to patient diagnosis, symptom analysis, and thrombosis prediction."
+    },
+    {
+        "db_name": "toxicology",
+        "table_name": "bond",
+        "description": "The \"bond\" table in the \"toxicology\" database is a detailed record of chemical bonds, uniquely identified by \"bond_id\". It contains information about the type of bond (\"bond_type\") such as single, double, or triple, represented by \"-\", \"=\", and \"#\", respectively. Each bond is associated with a specific molecule, indicated by \"molecule_id\". This table is linked to the \"molecule\" table through a foreign key relationship with \"molecule_id\". This table is crucial for queries related to the structure of molecules and the types of bonds they contain."
+    },
+    {
+        "db_name": "toxicology",
+        "table_name": "molecule",
+        "description": "The \"molecule\" table in the \"toxicology\" database serves as a unique identifier for different molecules, denoted by \"molecule_id\". It contains a crucial attribute, \"label\", which indicates whether a molecule is carcinogenic or not, represented by '+' and '-'. This table is essential for queries related to the carcinogenic properties of different molecules."
+    },
+    {
+        "db_name": "toxicology",
+        "table_name": "atom",
+        "description": "The \"atom\" table in the \"toxicology\" database is a detailed record of individual atoms, uniquely identified by \"atom_id\". It contains information about the type of element the atom represents, such as carbon, hydrogen, oxygen, etc., as indicated in the \"element\" column. The \"molecule_id\" column establishes a relationship with the \"molecule\" table, indicating the molecule to which the atom belongs. This table is crucial for queries related to the composition of molecules, providing a granular view of the atomic structure within each molecule."
+    },
+    {
+        "db_name": "toxicology",
+        "table_name": "connected",
+        "description": "The \"connected\" table in the \"toxicology\" database is a crucial table that represents the connections or bonds between two atoms, identified by \"atom_id\" and \"atom_id2\". Each entry in the table signifies a bond, represented by \"bond_id\", between two atoms. The table is designed with foreign key constraints referencing the \"atom\" and \"bond\" tables, ensuring data integrity and consistency. This table is essential for queries that need to understand the relationships between atoms in a toxicological context."
+    }
+]
