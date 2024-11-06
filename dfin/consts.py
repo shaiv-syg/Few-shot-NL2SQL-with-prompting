@@ -15,3 +15,16 @@ BIRD_DEV_SUBSET_JSON = f"{DB_PREPROCESSING_DIR}/dev_subset.json"
 # Output
 OUTPUT_PREDICT_JSON = "output/predict_dev.json"
 LOGS_PATH = "output/logs.csv"
+LINKED_TABLES_DIR = "output/linked_tables"
+LINKED_COLUMNS_DIR = "output/linked_columns"
+QUESTION_EMBEDDINGS_PATH = "output/question_embeddings.json"
+
+MINIMAL = "minimal"
+BALANCED = "balanced"
+CONSERVATIVE = "conservative"
+
+LINK_TABLE_MODES = [
+    MINIMAL,
+    BALANCED,
+    CONSERVATIVE
+]

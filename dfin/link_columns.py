@@ -3,7 +3,7 @@ import json
 import os
 import re
 import ast
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 
 import pandas as pd
 from langchain.utilities.sql_database import SQLDatabase
@@ -116,6 +116,7 @@ def find_create_table_boundaries(create_table: str):
                 break
 
     return start_line, end_line
+
 
 def remove_duplicates(lst):
     result = []
@@ -255,9 +256,9 @@ def add_pk_fk_if_relation_exits_with_table_links(db_id, table_links, table_name,
     return [col.strip() for col in top_k_columns]
 
 
-def get_focused_columns_for_table(db_id, question_embedding, table_name, table_links):
+def get_focused_columns_for_table(db_id, question_embedding, table_name, table_links, top_k):
     top_k_columns = get_top_k_columns(
-        top_k=15,
+        top_k=top_k,
         question_embedding=question_embedding,
         db_id=db_id,
         table_name=table_name
@@ -274,21 +275,43 @@ def get_focused_columns_for_table(db_id, question_embedding, table_name, table_l
     )
 
 
-def get_schema_linking_focused_context(
-        db_uri: str,
-        db_id: str,
-        question_embedding,
-        table_links: List[str],
-        annotated_db_descriptions_path: str
+def get_column_links_for_tables(
+    db_id: str,
+    question_embedding,
+    table_links: List[str],
+    top_k: int = 0
+) -> Dict[str, List[str]]:
+    table_columns_dict = {}
+    for table_name in table_links:
+        columns = get_focused_columns_for_table(db_id, question_embedding, table_name, table_links, top_k)
+        table_columns_dict[table_name] = columns
+    return table_columns_dict
+
+
+def link_schema_and_get_focused_context(
+    db_uri: str,
+    db_id: str,
+    question_embedding,
+    table_links: List[str],
+    annotated_db_descriptions_path: str
 ) -> Tuple[str, str]:
+    table_columns_dict = get_column_links_for_tables(db_id, question_embedding, table_links)
+    return get_focused_schema_context_for_links(annotated_db_descriptions_path, db_uri, table_columns_dict)
+
+
+def get_focused_schema_context_for_links(
+        annotated_db_descriptions_path,
+        db_uri,
+        table_columns_dict
+):
     schema_context = []
     descriptions_context = []
-    for table_name in table_links:
-        columns = get_focused_columns_for_table(db_id, question_embedding, table_name, table_links)
+    for table_name, columns in table_columns_dict.items():
         schema = get_filtered_table_context(db_uri, table_name, columns)
         schema_context.append(schema)
 
         filtered_descriptions = table_descriptions_filtered_parser(annotated_db_descriptions_path, table_name, columns)
         descriptions_context.append(filtered_descriptions)
-
     return "\n".join(schema_context), "\n".join(descriptions_context)
+
+

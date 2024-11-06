@@ -22,15 +22,29 @@ openai.api_version = "2023-05-15"
 os.environ["OPENAI_API_VERSION"] = "2023-05-15"
 os.environ["OPENAI_API_BASE"] = AZ_OAI_API_BASE_GPT_3
 
+# Global variables to store the token and its expiration time
+# Global variables to store the token and its expiration time
+current_token = None
+token_expiration_time = None
+
 
 def get_token():
-    credential = ClientSecretCredential(
-        os.getenv("AZ_TENANT_ID"),
-        os.getenv("AZ_SP_CLIENT_ID"),
-        os.getenv("AZ_SP_CLIENT_SECRET"),
-    )
-    token_response = credential.get_token("https://cognitiveservices.azure.com/.default")
-    return token_response
+    global current_token, token_expiration_time
+
+    # Check if the token is about to expire (or has already expired)
+    if current_token is None or token_expiration_time is None or (token_expiration_time - time.time()) < 60:
+        credential = ClientSecretCredential(
+            os.getenv("AZ_TENANT_ID"),
+            os.getenv("AZ_SP_CLIENT_ID"),
+            os.getenv("AZ_SP_CLIENT_SECRET"),
+        )
+        current_token = credential.get_token("https://cognitiveservices.azure.com/.default")
+
+        # Update the expiration time
+        # Assuming the token lasts for 1 hour, adjust as necessary
+        token_expiration_time = time.time() + 3600
+
+    return current_token
 
 
 def retry(max_retries=5, delay=3):

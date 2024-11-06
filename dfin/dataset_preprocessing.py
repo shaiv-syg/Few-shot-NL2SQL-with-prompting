@@ -4,6 +4,8 @@ import json
 import re
 import pandas as pd
 from langchain.utilities.sql_database import SQLDatabase
+
+from dfin.consts import *
 from dfin.utils.azure_openai import get_completion_4, get_embedding
 
 
@@ -176,8 +178,8 @@ def generate_general_table_descriptions(db_path: str = "dev/dev_databases"):
     print(loaded_data[:2])
 
 
-def create_dataset_columns_description_embeddings(input_dir="dev/dev_databases",
-                                                  output_dir="db_preprocessing/column_description_embeddings"):
+def create_dataset_columns_description_embeddings(input_dir=BIRD_DEV_DATABASES_PATH,
+                                                  output_dir=PREPROCESSING_DEV_DB_EMBEDDINGS_PATH):
     # Ensure the output directory exists
     os.makedirs(output_dir, exist_ok=True)
 
@@ -214,20 +216,24 @@ def create_dataset_columns_description_embeddings(input_dir="dev/dev_databases",
                 continue
 
             # Check if required columns exist
-            required_columns = ['original_column_name', 'column_name', 'column_description', 'value_description']
+            required_columns = ['original_column_name']
             if not all(column in df.columns for column in required_columns):
                 print(f"One or more required columns not found in {table_path}")
                 continue
 
             # Process each row to generate embeddings
             for _, row in df.iterrows():
-                # Generate the descriptive string
-                description = f"{row['original_column_name']} "
-                if row['column_name'] and row['column_name'] != row['original_column_name']:
-                    description += f"({row['column_name']}), "
-                else:
-                    description += ", "
-                description += f"description: {row['column_description']}. value description: {row['value_description']}"
+                original_column_name = str(row['original_column_name']).strip()
+
+                description = f"<{original_column_name}>"
+                if pd.notnull(row['column_name']) and row['column_name'] != original_column_name:
+                    description += f" ({row['column_name']})"
+
+                if pd.notnull(row['column_description']):
+                    description += f"\tdescription: {row['column_description']}"
+
+                if pd.notnull(row['value_description']):
+                    description += f"\tvalue description: {row['value_description']}"
 
                 # Get the embedding
                 embedding = get_embedding(description) if get_embedding else None
@@ -235,8 +241,8 @@ def create_dataset_columns_description_embeddings(input_dir="dev/dev_databases",
                 # Add to the data list
                 data.append({
                     "table_name": table_name.replace('.csv', ''),
-                    "original_column_name": row['original_column_name'],
-                    "embedding": embedding
+                    "original_column_name": original_column_name,
+                    "embedding": embedding,
                 })
 
         # Create a DataFrame from the data and save to a CSV file
@@ -271,6 +277,78 @@ def create_subset_of_dataset(input_dataset_path: str = "dev/dev.json", output_da
         json.dump(subset_data, file, indent=4)
 
     print(f"Subset created and saved to {output_dataset_path}")
+
+
+def validate_embeddings(input_dir=BIRD_DEV_DATABASES_PATH, embeddings_dir=PREPROCESSING_DEV_DB_EMBEDDINGS_PATH):
+    for db_name in os.listdir(input_dir):
+        db_path = os.path.join(input_dir, db_name, "database_description")
+
+        # Skip if it's not a directory
+        if not os.path.isdir(db_path):
+            continue
+
+        # Collect all unique original column names from the BIRD dataset
+        bird_data = {}
+        for table_name in os.listdir(db_path):
+            table_path = os.path.join(db_path, table_name)
+
+            # Skip if it's not a CSV file
+            if not table_path.endswith('.csv'):
+                continue
+
+            try:
+                df = pd.read_csv(table_path)
+            except UnicodeDecodeError:
+                try:
+                    df = pd.read_csv(table_path, encoding='ISO-8859-1')
+                except Exception as e:
+                    print(f"Error reading {table_path} with ISO-8859-1 encoding: {e}")
+                    continue
+            except Exception as e:
+                print(f"Error reading {table_path}: {e}")
+                continue
+
+            if 'original_column_name' not in df.columns:
+                print(f"'original_column_name' column not found in {table_path}")
+                continue
+
+            cleaned_table_name = table_name.replace('.csv', '')
+            bird_data[cleaned_table_name] = set(name.strip() for name in df['original_column_name'])
+
+
+        # Load the generated embeddings CSV file
+        embeddings_file_path = os.path.join(embeddings_dir, f"{db_name}.csv")
+        try:
+            embeddings_df = pd.read_csv(embeddings_file_path)
+        except Exception as e:
+            print(f"Error reading {embeddings_file_path}: {e}")
+            continue
+
+        # Convert the embeddings data to a dictionary for faster lookup
+        embeddings_data = {}
+        for _, row in embeddings_df.iterrows():
+            table_name = row['table_name']
+            original_column_name = row['original_column_name']
+            if table_name not in embeddings_data:
+                embeddings_data[table_name] = set()
+            embeddings_data[table_name].add(original_column_name)
+
+        # Check for missing original column names
+        for table_name, original_column_names in bird_data.items():
+            print(table_name, original_column_names)
+            if table_name not in embeddings_data:
+                print(f"Missing table {table_name} in embeddings data for {db_name}")
+            else:
+                for original_column_name in original_column_names:
+                    stripped_original_column_name = original_column_name.strip()
+                    if stripped_original_column_name not in embeddings_data[table_name]:
+                        print(
+                            f"Missing original column name {stripped_original_column_name} in table {table_name} for {db_name}")
+
+
+# Example usage:
+create_dataset_columns_description_embeddings('../dev/dev_databases', '../db_preprocessing/column_description_embeddings')
+# validate_embeddings('../dev/dev_databases', '../db_preprocessing/column_description_embeddings')
 
 
 if __name__ == "__main__":
